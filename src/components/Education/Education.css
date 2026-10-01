@@ -1,0 +1,161 @@
+/* ============================================================
+   Education CSS
+   ============================================================ */
+
+.education {
+  background: var(--bg-primary);
+}
+
+.education__wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.education__card {
+  display: flex;
+  gap: var(--space-6);
+  padding: var(--space-8);
+}
+
+/* Icon column */
+.education__icon-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.education__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  background: var(--accent-gradient);
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px var(--accent-glow-strong);
+}
+
+.education__icon-line {
+  flex: 1;
+  width: 2px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  min-height: 20px;
+}
+
+/* Content */
+.education__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.education__top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.education__institution {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.education__degree {
+  font-size: 0.95rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-top: var(--space-1);
+}
+
+.education__branch {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
+
+.education__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+
+.education__detail {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.education__cgpa {
+  color: var(--accent-tertiary);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* CGPA Bar */
+.education__cgpa-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.education__cgpa-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.education__cgpa-track {
+  height: 6px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.education__cgpa-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: var(--radius-full);
+  transition: width 1s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education__card {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .education__icon-col {
+    flex-direction: row;
+  }
+
+  .education__icon-line {
+    flex: 1;
+    height: 2px;
+    width: auto;
+    min-height: unset;
+  }
+
+  .education__top {
+    flex-direction: column;
+  }
+
+  .education__meta {
+    align-items: flex-start;
+  }
+}

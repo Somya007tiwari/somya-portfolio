@@ -1,0 +1,223 @@
+/* ============================================================
+   About CSS
+   ============================================================ */
+
+.about {
+  background: var(--bg-secondary);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* Text */
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.about__paragraph {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+}
+
+.about__location {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 0.4rem 1rem;
+  width: fit-content;
+  margin-top: var(--space-2);
+}
+
+/* Card Panel */
+.about__card-panel {
+  position: relative;
+}
+
+.about__dev-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Avatar */
+.about__dev-avatar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.about__dev-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px var(--accent-glow-strong);
+  letter-spacing: -0.02em;
+}
+
+.about__dev-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  border-radius: var(--radius-full);
+  padding: 0.3rem 0.8rem;
+}
+
+.about__dev-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Info */
+.about__dev-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.about__dev-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.about__dev-role {
+  font-size: 0.9rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.about__dev-uni {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.about__dev-divider {
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+/* Highlights */
+.about__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about__highlight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.about__highlight:hover {
+  border-color: var(--border-accent);
+  background: var(--accent-glow);
+}
+
+.about__highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.about__highlight-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.about__highlight-desc {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Accent floating box */
+.about__accent-box {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.75rem 1.1rem;
+  border-radius: var(--radius-md);
+}
+
+.about__accent-emoji {
+  font-size: 1.4rem;
+}
+
+.about__accent-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.about__accent-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .about__accent-box {
+    position: static;
+    width: fit-content;
+    margin-top: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .about__dev-avatar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

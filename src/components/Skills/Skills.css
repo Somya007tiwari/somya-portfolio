@@ -1,0 +1,134 @@
+/* ============================================================
+   Skills CSS
+   ============================================================ */
+
+.skills {
+  background: var(--bg-primary);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Category Card */
+.skills__category {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.skills__category--learning {
+  border-color: rgba(167, 139, 250, 0.25);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(129, 140, 248, 0.03) 100%);
+}
+
+.skills__category-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skills__category-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.skills__learning-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.6rem;
+  width: fit-content;
+}
+
+/* Skill Items */
+.skills__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.45rem 0.85rem;
+  transition: all var(--transition-base);
+  cursor: default;
+  position: relative;
+}
+
+.skill-item:hover {
+  color: var(--accent-primary);
+  border-color: var(--border-accent);
+  background: var(--accent-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--accent-glow-strong);
+}
+
+.skill-item__icon {
+  display: flex;
+  align-items: center;
+  color: var(--accent-primary);
+  transition: color var(--transition-fast);
+}
+
+.skill-item:hover .skill-item__icon {
+  color: var(--accent-secondary);
+}
+
+.skill-item__name {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* Learning indicator */
+.skill-item--learning {
+  opacity: 0.75;
+  border-style: dashed;
+}
+
+.skill-item--learning:hover {
+  opacity: 1;
+}
+
+.skill-item__learning-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a78bfa;
+  margin-left: 2px;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-item {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
