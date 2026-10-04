@@ -169,7 +169,7 @@ export const projects = [
       API: "REST API",
     },
     github: "https://github.com/Somya007tiwari/SHMS-project",
-    liveDemo: null,
+    liveDemo: "https://github.com/Somya007tiwari/SHMS-project",
     hasScreenshots: false, // Set to true and add screenshot paths when available
     screenshotPaths: [], // e.g. ["/screenshots/shms-1.png", "/screenshots/shms-2.png"]
     accentColor: "#06b6d4",
