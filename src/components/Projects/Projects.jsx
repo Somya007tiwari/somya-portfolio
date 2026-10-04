@@ -83,7 +83,7 @@ function ProjectPreview({ project }) {
 }
 
 function ProjectCard({ project, reversed }) {
-  const targetUrl = project.liveDemo || project.github;
+  const hasLiveDemo = Boolean(project.liveDemo);
 
   return (
     <article
@@ -91,22 +91,32 @@ function ProjectCard({ project, reversed }) {
       aria-label={`Project: ${project.name}`}
     >
       {/* Preview Link */}
-      <a
-        href={targetUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="project-card__preview"
-        aria-label={`Open ${project.name} live project`}
-      >
-        <ProjectPreview project={project} />
-        <div
-          className="project-card__preview-overlay"
-          style={{ "--accent": project.accentColor }}
-        />
-        <div className="project-card__preview-hover-badge">
-          <ExternalLink size={16} /> Open Project
+      {hasLiveDemo ? (
+        <a
+          href={project.liveDemo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-card__preview"
+          aria-label={`Open ${project.name} live project`}
+        >
+          <ProjectPreview project={project} />
+          <div
+            className="project-card__preview-overlay"
+            style={{ "--accent": project.accentColor }}
+          />
+          <div className="project-card__preview-hover-badge">
+            <ExternalLink size={16} /> Open Live Project
+          </div>
+        </a>
+      ) : (
+        <div className="project-card__preview">
+          <ProjectPreview project={project} />
+          <div
+            className="project-card__preview-overlay"
+            style={{ "--accent": project.accentColor }}
+          />
         </div>
-      </a>
+      )}
 
       {/* Content */}
       <div className="project-card__content">
